@@ -1,0 +1,58 @@
+@media (min-width: 320px) and (max-width: 575px) {
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: auto;
+  }
+
+  .logo {
+    text-align: center;
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+  .logo img {
+    width: 50vw;
+  }
+
+  /* Recherche Localisation */
+  .localisation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 0;
+    background-color: #f2f2f2;
+    box-shadow: inset 0px 10px 5px -5px #ccc;
+  }
+  .localisation i {
+    display: inline-block;
+    font-size: 20px;
+    color: #424242;
+  }
+  .localisation input {
+    text-align: center;
+    background-color: #f2f2f2;
+    border: transparent;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* Recherche Restaurant */
+  .search_restaurant h1 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .search_restaurant p {
+    font-size: 22px;
+    text-align: center;
+    margin: 0 10px 40px 10px;
+  }
+  .search_restaurant .btn {
+    background-color: transparent;
+    padding: 10px;
+    display: block;
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

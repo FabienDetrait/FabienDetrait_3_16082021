@@ -1,0 +1,77 @@
+$colour-primary: #9356DC;
+$colour-secondary: #FF79DA;
+$colour-tertiary: #99E2D0;
+$colour-form: #f2f2f2;
+$colour-shadow: #ccc;
+$colour-localisation:rgb(66, 66, 66);
+
+
+@media (min-width: 320px) and (max-width: 575px) {
+    body {
+        font-family: "Roboto", sans-serif;
+        margin: auto;    
+    }
+        
+    .logo {
+        text-align: center;
+        margin-top: 30px;
+        padding-bottom: 10px;
+        img {
+            width: 50vw;
+        }
+    }
+
+    /* Recherche Localisation */
+    .localisation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0 20px 0;
+        background-color: $colour-form;
+        box-shadow: inset 0px 10px 5px -5px $colour-shadow;
+        i {
+            display: inline-block;
+            font-size: 20px;
+            color:$colour-localisation;
+        }
+        input {
+            text-align: center;
+            background-color: $colour-form;
+            border: transparent;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    /* Recherche Restaurant */
+    .search_restaurant {
+        h1 {
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        p {
+            font-size: 22px;
+            text-align: center;
+            margin: 0 10px 40px 10px;
+        }
+        .btn {
+            background-color: transparent;
+            padding: 10px;
+            display: block;
+            margin: auto;    
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+}

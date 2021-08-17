@@ -1,0 +1,19 @@
+{
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabienDetrait/FabienDetrait_3_16082021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabienDetrait/FabienDetrait_3_16082021/issues"
+  },
+  "homepage": "https://github.com/FabienDetrait/FabienDetrait_3_16082021#readme"
+}
