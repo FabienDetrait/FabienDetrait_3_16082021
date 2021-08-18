@@ -1,10 +1,43 @@
 $colour-primary: #9356DC;
 $colour-secondary: #FF79DA;
 $colour-tertiary: #99E2D0;
-$colour-form: #f2f2f2;
-$colour-shadow: #ccc;
-$colour-localisation:rgb(66, 66, 66);
+$colour-form: rgb(234, 234, 234);
+$colour-shadow: rgb(212, 212, 212);
+$colour-localisation:rgb(75, 75, 75);
+$colour-backgroundintro: rgb(246, 246, 246);
+$colour-btnfont: white;
+$colour-nouveau: rgb(22, 100, 52);
+$colour-footer: rgb(53, 53, 53);
 
+@mixin bouton {
+    font-size: 20px;
+    font-weight: 500;
+    display: block;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    background: linear-gradient(to left top, $colour-primary, $colour-secondary);
+    color: $colour-btnfont;
+    box-shadow: 0 0 10px $colour-shadow;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul a {
+    color: $colour-btnfont;
+}
 
 @media (min-width: 320px) and (max-width: 575px) {
     body {
@@ -45,11 +78,14 @@ $colour-localisation:rgb(66, 66, 66);
 
     /* Recherche Restaurant */
     .search_restaurant {
+        background-color: $colour-backgroundintro;
+        padding: 30px 0 60px 0;
+        margin-bottom: 40px;
         h1 {
             font-weight: bold;
             font-size: 30px;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 0px;
         }
         p {
             font-size: 22px;
@@ -57,21 +93,132 @@ $colour-localisation:rgb(66, 66, 66);
             margin: 0 10px 40px 10px;
         }
         .btn {
-            background-color: transparent;
-            padding: 10px;
-            display: block;
-            margin: auto;    
+            @include bouton;
+        }    
+    }
+
+    /* Fonctionnement */
+    .fonctionnement {
+            width: 95%;
+            margin: auto;
+        &_menu {
+            margin-bottom: 30px;
+            & a {
+                display: flex;
+                align-items: center;   
+            }
+            &_numero {
+                position: relative;
+                z-index: 1;
+                border: 1px solid $colour-primary;
+                border-radius: 100px;
+                padding: 0 5px 0 5px;
+                background-color: $colour-primary;
+                color: $colour-btnfont;
+            }
+            &_explication {
+                display: flex;
+                align-items: center;
+                margin: auto;
+                margin-left: 10px;
+                width: 90%;
+                border: 1px solid $colour-backgroundintro;
+                border-radius: 15px;
+                background-color: $colour-backgroundintro;
+                position: absolute;
+                box-shadow: 5px 5px 10px $colour-shadow;
+                &:hover {
+                    
+                }
+                & i {
+                    padding: 0 20px 0 30px;
+                    color: $colour-localisation;
+                }
+            }    
         }
     }
 
+    /* Restaurants */
+    .restaurants {
+        background-color: $colour-backgroundintro;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        & h2 {
+            padding: 30px 0 0 10px;
+        }
+        &_liste {
+            width: 95%;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid $colour-backgroundintro;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background-color: $colour-btnfont;
+            box-shadow: 0 0 10px $colour-shadow;
+            position: relative;
+            & img {
+                width: 100%;
+                height: 70vh;
+                object-fit: cover;
+                border-radius: 15px 15px 0 0;
+            }
+            &_localisation {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 0 30px 0 10px;
+                &_info {
+                    line-height: 5px;
+                    font-size: 1.4em;
+                }
+                &_heart {
+                    font-size: 35px;
+                    color: $colour-localisation;
+                }
+            }
+            &_nouveau {
+               position: absolute;
+               z-index: 1;
+               top: 15px;
+               right:15px;
+               padding: 5px 10px 5px 10px;
+               border: 1px solid $colour-tertiary;
+               border-radius: 3px;
+               background-color: $colour-tertiary;
+               &_texte {
+                   margin: 0;
+                   font-weight: bold;
+                   color: $colour-nouveau;
+               }
+            }
+        }
+    }
 
-
-
-
-
-
-
-
-
-
+    /* footer */
+    .footer {
+        background-color: $colour-footer;
+        padding-bottom: 20px;
+        color: $colour-btnfont;
+        &_logo {
+            padding: 30px 0 0 40px;
+            margin: 0;
+            font-family: "Shrikhand", sans-serif;
+            font-size: 1.2em;
+            font-weight: lighter;
+        }
+        &_ul a {
+            display: flex;
+            align-items: center;
+        }
+        &_ul_li {
+            line-height: 2px;
+        }
+        &_menu {
+            padding-left: 10px;
+        }
+    }
+    
+    #deal {
+        font-size: 0.7em;
+    }
 }

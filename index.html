@@ -35,44 +35,42 @@
         <section class="search_restaurant">
             <h1>Réservez le menu qui <br/>vous convient</h1>
             <p>Découvrez des restaurants d'exception, selectionnés par nos soins.</p>
-            <button class="btn" type="submit">Explorer nos restaurants</button>
+            <button class="btn" type="submit">Explorer nos restaurants</button>
         </section>
 
     <!-- Fonctionnement -->
         <section class="fonctionnement">
             <h2>Fonctionnement</h2>
+            
+            <article class="fonctionnement_menu">
+                <a href="#">
+                    <p class="fonctionnement_menu_numero">1</p>
+                    <div class="fonctionnement_menu_explication">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Choisissez un restaurant</h3>
+                    </div>
+                </a>
+            </article>
 
-            <div class="fonctionnement_menu">
-                <article class="fonctionnement_menu_choix">
-                    <a href="#">
-                        <p class="fonctionnement_menu_choix_numero">1</p>
-                        <div class="fonctionnement_menu_choix_explication">
-                            <i class="fas fa-mobile-alt"></i>
-                            <h3>Choisissez un restaurant</h3>
-                        </div>
-                    </a>
-                </article>
+            <article class="fonctionnement_menu">
+                <a href="#">
+                    <p class="fonctionnement_menu_numero">2</p>
+                    <div class="fonctionnement_menu_explication">
+                        <i class="fas fa-list-ul"></i>
+                        <h3>Composez votre menu</h3>
+                    </div>
+                </a>
+            </article>
 
-                <article class="fonctionnement_menu_choix">
-                    <a href="#">
-                        <p class="fonctionnement_menu_choix_numero">2</p>
-                        <div class="fonctionnement_menu_choix_explication">
-                            <i class="fas fa-list-ul"></i>
-                            <h3>Composez votre menu</h3>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="fonctionnement_menu_choix">
-                    <a href="#">
-                        <p class="fonctionnement_menu_choix_numero">3</p>
-                        <div class="fonctionnement_menu_choix_explication">
-                            <i class="fas fa-store"></i>
-                            <h3>Dégustez au restaurant</h3>
-                        </div>
-                    </a>
-                </article>
-            </div>
+            <article class="fonctionnement_menu">
+                <a href="#">
+                    <p class="fonctionnement_menu_numero">3</p>
+                    <div class="fonctionnement_menu_explication">
+                        <i class="fas fa-store"></i>
+                        <h3>Dégustez au restaurant</h3>
+                    </div>
+                </a>
+            </article>    
         </section>
 
     <!-- Restaurants -->
@@ -92,7 +90,9 @@
                             <i class="far fa-heart"></i>
                         </div>
                     </div>
-                    <p class="restaurants_liste_nouveau">Nouveau</p>    
+                    <div class="restaurants_liste_nouveau">
+                        <p class="restaurants_liste_nouveau_texte">Nouveau</p>
+                    </div>   
                 </a>
             </div>
             
@@ -110,7 +110,9 @@
                             <i class="far fa-heart"></i>
                         </div>
                     </div>
-                    <p class="restaurants_liste_nouveau">Nouveau</p>  
+                    <div class="restaurants_liste_nouveau">
+                        <p class="restaurants_liste_nouveau_texte">Nouveau</p>
+                    </div> 
                 </a>
             </div>
 
@@ -127,8 +129,7 @@
                         <div class="restaurants_liste_localisation_heart">
                             <i class="far fa-heart"></i>
                         </div>
-                    </div>
-                    <p class="restaurants_liste_nouveau">Nouveau</p>  
+                    </div>  
                 </a>
             </div>
 
@@ -145,16 +146,15 @@
                         <div class="restaurants_liste_localisation_heart">
                             <i class="far fa-heart"></i>
                         </div>
-                    </div>
-                    <p class="restaurants_liste_nouveau">Nouveau</p>  
+                    </div> 
                 </a>
             </div>
         </section>
     </main>
 
     <!-- footer -->
-    <footer>
-        <h4 class="logo_footer">Ohmyfood</h4>
+    <footer class="footer">
+        <h4 class="footer_logo">Ohmyfood</h4>
 
         <ul class="footer_ul">
             <li class="footer_ul_li">
@@ -166,20 +166,20 @@
 
             <li class="footer_ul_li">
                 <a href="#">
-                    <i class="fas fa-hands-helping"></i>
+                    <i id="deal" class="fas fa-hands-helping"></i>
                     <p class="footer_menu">Devenir partenaire</p>
                 </a>     
             </li>
 
             <li class="footer_ul_li">
                 <a href="#">
-                    <p class="footer_menu">Mentions légales</p>
+                    <p class="footer_menu_b">Mentions légales</p>
                 </a>     
             </li>
 
             <li class="footer_ul_li">
                 <a href="mailto:contact@ohmyfood.com">
-                    <p class="footer_menu">Contact</p>
+                    <p class="footer_menu_b">Contact</p>
                 </a>     
             </li>
         </ul>
