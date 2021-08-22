@@ -1,3 +1,33 @@
+@keyframes vide {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rempli {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 a {
   text-decoration: none;
   color: black;
@@ -204,9 +234,14 @@ body {
 }
 .restaurants_liste img {
   width: 100%;
-  height: 70vh;
+  height: 30vh;
   object-fit: cover;
   border-radius: 15px 15px 0 0;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .restaurants_liste img {
+    height: 20vh;
+  }
 }
 @media (min-width: 992px) {
   .restaurants_liste img {
@@ -217,7 +252,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 30px 0 10px;
+  margin: 0 40px 0 10px;
 }
 .restaurants_liste_localisation_info {
   line-height: 5px;
@@ -226,12 +261,25 @@ body {
 .restaurants_liste_localisation_heart {
   font-size: 35px;
   color: #4b4b4b;
+  margin: 0 30px 30px 0;
 }
-.restaurants_liste_localisation_heart_full {
-  display: none;
+.restaurants_liste_localisation_heart--empty {
+  position: absolute;
+  z-index: 2;
 }
-.restaurants_liste_localisation_heart:hover {
-  display: none;
+.restaurants_liste_localisation_heart--empty:hover {
+  animation: vide 1s forwards linear;
+}
+.restaurants_liste_localisation_heart--empty:hover + .restaurants_liste_localisation_heart--full {
+  animation: rempli 1s forwards linear;
+}
+.restaurants_liste_localisation_heart--full {
+  position: absolute;
+  opacity: 0;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform-origin: bottom;
 }
 .restaurants_liste_nouveau {
   position: absolute;
@@ -265,6 +313,9 @@ body {
 .footer_ul a {
   display: flex;
   align-items: center;
+}
+.footer_ul a:hover {
+  color: #9356DC;
 }
 .footer_ul_li {
   line-height: 2px;

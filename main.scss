@@ -31,6 +31,30 @@ $colour-fonctionnement-hover: rgb(245, 237, 255);
     grid-row-gap: 15px;
 }
 
+@mixin coeur {
+    font-size: 35px;
+    color: $colour-localisation;
+    margin: 0 30px 30px 0;
+    &--empty {
+        position: absolute;
+        z-index: 2;
+        &:hover {
+            animation: vide 1s forwards linear;
+            & +.restaurants_liste_localisation_heart--full {
+                animation: rempli 1s forwards linear;
+            }
+        }  
+    }
+    &--full {
+        position: absolute;
+        opacity: 0;
+        background: linear-gradient(to top, $colour-secondary, $colour-primary);
+        -webkit-background-clip: text;
+        color: transparent;
+        transform-origin: bottom;
+    }
+}
+
 @mixin tablette {
     @media (min-width: 768px) and (max-width: 991px) {
         @content;
@@ -41,6 +65,22 @@ $colour-fonctionnement-hover: rgb(245, 237, 255);
     @media (min-width: 992px) {
         @content
     }
+}
+
+@keyframes vide {
+    0% {opacity: 1;}
+    99% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes rempli {
+    0% {opacity: 1;
+        transform: scale(0);}
+    25% {transform: scale(0.25);}
+    50% {transform: scale(0.5);}
+    75% {transform: scale(0.75);}
+    100% {opacity: 1;
+          transform: scale(1);}
 }
 
 a {
@@ -222,9 +262,12 @@ ul a {
             }
             & img {
                 width: 100%;
-                height: 70vh;
+                height: 30vh;
                 object-fit: cover;
                 border-radius: 15px 15px 0 0;
+                @include tablette {
+                    height: 20vh;
+                }
                 @include desktop {
                     height: 50vh;
                 }
@@ -233,20 +276,13 @@ ul a {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                margin: 0 30px 0 10px;
+                margin: 0 40px 0 10px;
                 &_info {
                     line-height: 5px;
                     font-size: 1.4em;
                 }
                 &_heart {
-                    font-size: 35px;
-                    color: $colour-localisation;
-                    &_full {
-                        display: none;
-                    }
-                    &:hover {
-                        display: none;
-                    }
+                    @include coeur;
                 }
             }
             &_nouveau {
@@ -282,6 +318,9 @@ ul a {
         &_ul a {
             display: flex;
             align-items: center;
+            &:hover {
+                color: $colour-primary;
+            }
         }
         &_ul_li {
             line-height: 2px;
@@ -296,3 +335,4 @@ ul a {
     }
 
     
+
