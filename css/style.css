@@ -9,25 +9,6 @@
     opacity: 0;
   }
 }
-@keyframes rempli {
-  0% {
-    opacity: 1;
-    transform: scale(0);
-  }
-  25% {
-    transform: scale(0.25);
-  }
-  50% {
-    transform: scale(0.5);
-  }
-  75% {
-    transform: scale(0.75);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 a {
   text-decoration: none;
   color: black;
@@ -35,6 +16,10 @@ a {
 
 h2 {
   font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1em;
 }
 
 ul {
@@ -55,10 +40,159 @@ body {
   }
 }
 
+/* loader */
+.loader {
+  position: fixed;
+  z-index: 10;
+  font-family: "Shrikhand", sans-serif;
+  font-size: 3em;
+  background: white;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  opacity: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  animation: loading 5s forwards;
+}
+
+.oh {
+  color: #9356DC;
+  animation: gauche 1s, color-oh 4s 1s both;
+}
+
+@keyframes gauche {
+  0% {
+    transform: translateX(-1000%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes color-oh {
+  0% {
+    color: #9356DC;
+  }
+  20% {
+    color: #99E2D0;
+  }
+  40% {
+    color: #FF79DA;
+  }
+  60% {
+    color: #9356DC;
+  }
+  80% {
+    color: #99E2D0;
+  }
+  100% {
+    color: #FF79DA;
+  }
+}
+.my {
+  color: #FF79DA;
+  animation: haut 1s, color-my 4s 1s both;
+}
+
+@keyframes haut {
+  0% {
+    transform: translateY(-1000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes color-my {
+  0% {
+    color: #FF79DA;
+  }
+  20% {
+    color: #9356DC;
+  }
+  40% {
+    color: #99E2D0;
+  }
+  60% {
+    color: #FF79DA;
+  }
+  80% {
+    color: #9356DC;
+  }
+  100% {
+    color: #99E2D0;
+  }
+}
+.food {
+  color: #99E2D0;
+  animation: bas 1s, color-food 4s 1s both;
+}
+
+@keyframes bas {
+  0% {
+    transform: translateY(1000%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes droite {
+  0% {
+    transform: translateX(10000%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes color-food {
+  0% {
+    color: #99E2D0;
+  }
+  20% {
+    color: #FF79DA;
+  }
+  40% {
+    color: #9356DC;
+  }
+  60% {
+    color: #99E2D0;
+  }
+  80% {
+    color: #FF79DA;
+  }
+  100% {
+    color: #9356DC;
+  }
+}
+.point_a {
+  color: #9356DC;
+  animation: droite 1s, color-oh 4s 1s both;
+}
+
+.point_b {
+  color: #FF79DA;
+  animation: droite 1s, color-my 4s 1s both;
+}
+
+.point_c {
+  color: #99E2D0;
+  animation: droite 1s, color-food 4s 1s both;
+}
+
+@keyframes loading {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+/* logo */
 .logo {
   text-align: center;
-  margin-top: 30px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .logo img {
   width: 50vw;
@@ -157,7 +291,7 @@ body {
   align-items: center;
   margin: auto;
   margin-left: 5px;
-  width: 85vw;
+  width: 80vw;
   border: 1px solid #f6f6f6;
   border-radius: 15px;
   background-color: #f6f6f6;
@@ -271,7 +405,9 @@ body {
   animation: vide 1s forwards linear;
 }
 .restaurants_liste_localisation_heart--empty:hover + .restaurants_liste_localisation_heart--full {
-  animation: rempli 1s forwards linear;
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 1s linear;
 }
 .restaurants_liste_localisation_heart--full {
   position: absolute;
@@ -280,6 +416,7 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transform-origin: bottom;
+  transform: scale(0);
 }
 .restaurants_liste_nouveau {
   position: absolute;
