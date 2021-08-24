@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes vide {
   0% {
     opacity: 1;
@@ -50,17 +51,17 @@ body {
   width: 100%;
   max-width: 1200px;
   height: 100%;
-  opacity: 0.95;
+  opacity: 0.97;
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
-  animation: loading 5s forwards;
+  animation: loading 4s forwards;
 }
 
 .oh {
   color: #9356DC;
-  animation: gauche 1s, color-oh 4s 1s both;
+  animation: gauche 1s, color-oh 3s 1s both;
 }
 
 @keyframes gauche {
@@ -93,7 +94,7 @@ body {
 }
 .my {
   color: #FF79DA;
-  animation: haut 1s, color-my 4s 1s both;
+  animation: haut 1s, color-my 3s 1s both;
 }
 
 @keyframes haut {
@@ -126,7 +127,7 @@ body {
 }
 .food {
   color: #99E2D0;
-  animation: bas 1s, color-food 4s 1s both;
+  animation: bas 1s, color-food 3s 1s both;
 }
 
 @keyframes bas {
@@ -135,14 +136,6 @@ body {
   }
   100% {
     transform: translateY(0);
-  }
-}
-@keyframes droite {
-  0% {
-    transform: translateX(10000%);
-  }
-  100% {
-    transform: translateX(0);
   }
 }
 @keyframes color-food {
@@ -167,19 +160,27 @@ body {
 }
 .point_a {
   color: #9356DC;
-  animation: droite 1s, color-oh 4s 1s both;
+  animation: droite 1s, color-oh 3s 1s both;
 }
 
 .point_b {
   color: #FF79DA;
-  animation: droite 1s, color-my 4s 1s both;
+  animation: droite 1s, color-my 3s 1s both;
 }
 
 .point_c {
   color: #99E2D0;
-  animation: droite 1s, color-food 4s 1s both;
+  animation: droite 1s, color-food 3s 1s both;
 }
 
+@keyframes droite {
+  0% {
+    transform: translateX(10000%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 @keyframes loading {
   0% {
     visibility: visible;
@@ -191,11 +192,21 @@ body {
 /* logo */
 .logo {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .logo img {
   width: 50vw;
+}
+@media (min-width: 992px) {
+  .logo img {
+    width: 35vw;
+  }
+}
+@media (min-width: 992px) {
+  .logo {
+    max-width: 1200px;
+  }
 }
 
 /* Recherche Localisation */
@@ -251,7 +262,8 @@ body {
 }
 .search_restaurant .btn:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  box-shadow: 0 0 10px #6e6e6e;
+  opacity: 0.8;
 }
 
 /* Fonctionnement */
@@ -313,6 +325,7 @@ body {
 .fonctionnement_menu_explication:hover {
   background-color: #f2eafb;
   border: 1px solid #f2eafb;
+  box-shadow: 5px 5px 10px #bbbbbb;
 }
 .fonctionnement_menu_explication:hover > i {
   color: #9356DC;
@@ -431,7 +444,7 @@ body {
 .restaurants_liste_nouveau_texte {
   margin: 0;
   font-weight: bold;
-  color: #166434;
+  color: #1b6150;
 }
 
 /* footer */
@@ -464,5 +477,28 @@ body {
 #deal {
   font-size: 0.7em;
 }
+
+/* ----------------------------- A La Française ------------------------*/
+/* Rajout icône "retour" */
+.home_arrow {
+  font-size: 5vw;
+  position: absolute;
+  top: 15px;
+  margin-left: 30px;
+}
+
+/* Images Restaurant */
+.restaurant_image img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .restaurant_image img {
+    height: 120vh;
+  }
+}
+
+/* Menu */
 
 /*# sourceMappingURL=style.css.map */
