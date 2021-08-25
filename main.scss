@@ -38,7 +38,6 @@ $colour-fonctionnement-hover: rgb(245, 237, 255);
 }
 
 @mixin coeur {
-    font-size: 35px;
     color: $colour-localisation;
     margin: 0 30px 30px 0;
     &--empty {
@@ -46,7 +45,8 @@ $colour-fonctionnement-hover: rgb(245, 237, 255);
         z-index: 2;
         &:hover {
             animation: vide 1s forwards linear;
-            & +.restaurants_liste_localisation_heart--full {
+            cursor: pointer;
+            & + i {
                 opacity: 1;
                 transform: scale(1);
                 transition: transform 1s linear;
@@ -255,7 +255,6 @@ ul a {
     .search_restaurant {
         background-color: $colour-backgroundintro;
         padding: 30px 0 60px 0;
-        margin-bottom: 40px;
         h1 {
             font-weight: bold;
             font-size: 30px;
@@ -390,6 +389,7 @@ ul a {
                     font-size: 1.4em;
                 }
                 &_heart {
+                    font-size: 35px;
                     @include coeur;
                 }
             }
@@ -456,12 +456,75 @@ ul a {
 /* Images Restaurant */
 .restaurant_image img {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     object-fit: cover;
     @include tablette {
-        height: 120vh;
-    }   
+        height: 140vh;
+    }  
+    @include desktop {
+        height: 80vh;
+    } 
 }
 
 /* Menu */
-    
+.resto {
+    background-color: $colour-backgroundintro;
+    border-radius: 50px 50px 0 0;
+    margin-top: -60px;
+    position: relative;
+    &_titre {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px 0px 15px;
+        margin-bottom: -15px;
+        &_nom {
+            font-family: "Shrikhand", sans-serif;
+            font-size: 1.6em;
+            &_heart {
+                font-size: 25px;    
+                @include coeur;
+            }
+        }
+    }   
+}
+
+.menu {
+    margin: 0 0 40px 15px;
+    &_titre {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: normal;
+        margin-bottom: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: $colour-tertiary;
+            width: 50px;
+            height: 4px;
+            bottom: -7px;
+        }
+    }
+    &_choix {
+        border: 1px solid $colour-btnfont;
+        border-radius: 20px;
+        margin: 0 15px 15px 0;
+        background-color: $colour-btnfont;
+        padding: 0 15px 0px 10px;
+        box-shadow: 0 0 10px $colour-shadow;
+        &_nom {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
+        &_complement {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -5px;
+            &_prix {
+                font-weight: bold;
+            }
+        }
+    }
+}
