@@ -343,16 +343,7 @@ body {
 .restaurants h2 {
   margin-left: 17px;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  .restaurants_tableau {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-  }
-}
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .restaurants_tableau {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -460,6 +451,19 @@ body {
   font-size: 1.2em;
   font-weight: lighter;
 }
+@media (min-width: 768px) {
+  .footer_logo {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .footer_ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 0;
+  }
+}
 .footer_ul a {
   display: flex;
   align-items: center;
@@ -518,9 +522,19 @@ body {
   padding: 10px 30px 0px 15px;
   margin-bottom: -15px;
 }
+@media (min-width: 768px) {
+  .resto_titre {
+    justify-content: center;
+  }
+}
 .resto_titre_nom {
   font-family: "Shrikhand", sans-serif;
   font-size: 1.6em;
+}
+@media (min-width: 768px) {
+  .resto_titre_nom {
+    padding-right: 20px;
+  }
 }
 .resto_titre_nom_heart {
   font-size: 25px;
@@ -560,6 +574,18 @@ body {
   margin-bottom: 30px;
   position: relative;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu_titre {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 992px) {
+  .menu_titre {
+    display: flex;
+    justify-content: center;
+  }
+}
 .menu_titre::before {
   content: "";
   position: absolute;
@@ -579,6 +605,20 @@ body {
   box-shadow: 0 0 10px #d4d4d4;
   line-height: 10px;
   overflow: hidden;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .menu_choix {
+    width: 55%;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .menu_choix {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
+  }
 }
 .menu_choix_list {
   white-space: nowrap;
