@@ -686,6 +686,10 @@ body {
   animation: apparition 2s 0.4s backwards;
 }
 
+.menu_choix:nth-child(5) {
+  animation: apparition 2s 0.6s backwards;
+}
+
 @keyframes apparition {
   0% {
     opacity: 0;
