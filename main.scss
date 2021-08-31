@@ -39,7 +39,6 @@ $colour-fonctionnement-hover: rgb(245, 237, 255);
 
 @mixin coeur {
     color: $colour-localisation;
-    margin: 0 30px 30px 0;
     &--empty {
         position: absolute;
         z-index: 2;
@@ -369,6 +368,7 @@ body {
         position: relative;
         &:hover {
             box-shadow: 0 0 10px $colour-primary;
+            cursor: pointer;
         }
         & img {
             width: 100%;
@@ -376,24 +376,17 @@ body {
             object-fit: cover;
             border-radius: 15px 15px 0 0;
             @include tablette {
-                height: 20vh;
+                height: 70vh;
             }
             @include desktop {
                 height: 50vh;
             }
         }
         &_localisation {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             margin: 0 40px 0 10px;
             &_info {
                 line-height: 5px;
                 font-size: 1.4em;
-            }
-            &_heart {
-                font-size: 35px;
-                @include coeur;
             }
         }
         &_nouveau {
@@ -410,6 +403,13 @@ body {
                font-weight: bold;
                color: $colour-nouveau;
            }
+        }
+        &_heart {
+            font-size: 35px;
+            position: absolute;
+            right: 65px;
+            bottom: 70px;
+            @include coeur;
         }
     }
 }
@@ -502,7 +502,8 @@ body {
                 padding-right: 20px;
             }
             &_heart {
-                font-size: 25px;    
+                font-size: 25px;
+                margin: 0 30px 30px 0;  
                 @include coeur;
             }
         }
@@ -592,7 +593,8 @@ body {
                 justify-content: center;
                 align-items: center;
                 border-radius: 0 20px 20px 0;
-                margin-right: -75px;
+                width: 0;
+                transition-duration: 0.4s;
             }
         }
     }
@@ -600,7 +602,7 @@ body {
 
 /** Animations du menu **/
 .menu_choix:hover .menu_choix_complement--check {
-    margin: 0;
+    width: 80px;
     transition-duration: 0.7s;   
 }
 

@@ -368,6 +368,7 @@ body {
 }
 .restaurants_liste:hover {
   box-shadow: 0 0 10px #9356DC;
+  cursor: pointer;
 }
 .restaurants_liste img {
   width: 100%;
@@ -377,7 +378,7 @@ body {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .restaurants_liste img {
-    height: 20vh;
+    height: 70vh;
   }
 }
 @media (min-width: 992px) {
@@ -386,41 +387,11 @@ body {
   }
 }
 .restaurants_liste_localisation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0 40px 0 10px;
 }
 .restaurants_liste_localisation_info {
   line-height: 5px;
   font-size: 1.4em;
-}
-.restaurants_liste_localisation_heart {
-  font-size: 35px;
-  color: #4b4b4b;
-  margin: 0 30px 30px 0;
-}
-.restaurants_liste_localisation_heart--empty {
-  position: absolute;
-  z-index: 2;
-}
-.restaurants_liste_localisation_heart--empty:hover {
-  animation: vide 1s forwards linear;
-  cursor: pointer;
-}
-.restaurants_liste_localisation_heart--empty:hover + i {
-  opacity: 1;
-  transform: scale(1);
-  transition: transform 1s linear;
-}
-.restaurants_liste_localisation_heart--full {
-  position: absolute;
-  opacity: 0;
-  background: linear-gradient(to top, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  color: transparent;
-  transform-origin: bottom;
-  transform: scale(0);
 }
 .restaurants_liste_nouveau {
   position: absolute;
@@ -436,6 +407,35 @@ body {
   margin: 0;
   font-weight: bold;
   color: #1b6150;
+}
+.restaurants_liste_heart {
+  font-size: 35px;
+  position: absolute;
+  right: 65px;
+  bottom: 70px;
+  color: #4b4b4b;
+}
+.restaurants_liste_heart--empty {
+  position: absolute;
+  z-index: 2;
+}
+.restaurants_liste_heart--empty:hover {
+  animation: vide 1s forwards linear;
+  cursor: pointer;
+}
+.restaurants_liste_heart--empty:hover + i {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform 1s linear;
+}
+.restaurants_liste_heart--full {
+  position: absolute;
+  opacity: 0;
+  background: linear-gradient(to top, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  color: transparent;
+  transform-origin: bottom;
+  transform: scale(0);
 }
 
 /* footer */
@@ -538,8 +538,8 @@ body {
 }
 .resto_titre_nom_heart {
   font-size: 25px;
-  color: #4b4b4b;
   margin: 0 30px 30px 0;
+  color: #4b4b4b;
 }
 .resto_titre_nom_heart--empty {
   position: absolute;
@@ -658,12 +658,13 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 0 20px 20px 0;
-  margin-right: -75px;
+  width: 0;
+  transition-duration: 0.4s;
 }
 
 /** Animations du menu **/
 .menu_choix:hover .menu_choix_complement--check {
-  margin: 0;
+  width: 80px;
   transition-duration: 0.7s;
 }
 
