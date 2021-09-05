@@ -34,10 +34,10 @@
             object-fit: cover;
             border-radius: 15px 15px 0 0;
             @include tablette {
-                height: 70vh;
+                height: 30vh;
             }
             @include desktop {
-                height: 50vh;
+                height: 30vh;
             }
         }
         &_localisation {

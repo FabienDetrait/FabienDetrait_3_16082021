@@ -15,5 +15,9 @@
     }
     .btn {
         @include bouton;
-    }    
+    }
+    .commander {
+        padding-left: 40px;
+        padding-right: 40px;
+    }   
 }

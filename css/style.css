@@ -228,7 +228,7 @@ body {
 }
 @media (min-width: 992px) {
   .logo img {
-    width: 35vw;
+    width: 30vw;
   }
 }
 @media (min-width: 992px) {
@@ -243,6 +243,12 @@ body {
   position: absolute;
   top: 15px;
   margin-left: 30px;
+}
+@media (min-width: 768px) {
+  .home_arrow {
+    font-size: 3vw;
+    top: 30px;
+  }
 }
 
 /* footer */
@@ -403,12 +409,12 @@ body {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .restaurants_liste img {
-    height: 70vh;
+    height: 30vh;
   }
 }
 @media (min-width: 992px) {
   .restaurants_liste img {
-    height: 50vh;
+    height: 30vh;
   }
 }
 .restaurants_liste_localisation {
@@ -471,12 +477,12 @@ body {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .restaurant_image img {
-    height: 140vh;
+    height: 50vh;
   }
 }
 @media (min-width: 992px) {
   .restaurant_image img {
-    height: 80vh;
+    height: 50vh;
   }
 }
 
@@ -711,6 +717,10 @@ body {
   cursor: pointer;
   box-shadow: 0 0 10px #6e6e6e;
   opacity: 0.8;
+}
+.search_restaurant .commander {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

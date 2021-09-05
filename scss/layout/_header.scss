@@ -6,7 +6,7 @@
     img {
         width: 50vw;
         @include desktop {
-            width: 35vw;
+            width: 30vw;
         }
     }
     @include desktop {
@@ -19,5 +19,9 @@
     font-size: 5vw;
     position: absolute;
     top: 15px;
-    margin-left: 30px; 
+    margin-left: 30px;
+    @include both {
+        font-size: 3vw;
+        top: 30px;
+    }
 }

@@ -4,10 +4,10 @@
     height: 40vh;
     object-fit: cover;
     @include tablette {
-        height: 140vh;
+        height: 50vh;
     }  
     @include desktop {
-        height: 80vh;
+        height: 50vh;
     } 
 }
 
